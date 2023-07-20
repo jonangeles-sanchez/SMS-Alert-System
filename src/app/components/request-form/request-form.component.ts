@@ -13,12 +13,15 @@ export class RequestFormComponent {
   shoeSize!: number;
   quantity!: number;
 
+  newShoe: boolean = false;
+
+  phoneLengthValid: boolean = false;
+
   shoes: ShoeRequest[] = [];
 
-  submitForm(): void {
-    console.log(this.phoneNumber);
-    console.log(this.shoes);
+  constructor() {}
 
+  submitForm(): void {
     //this.resetForm();
   }
 
@@ -28,6 +31,11 @@ export class RequestFormComponent {
     this.shoeSize = 0;
     this.phoneNumber = '';
     this.quantity = 0;
+    this.resetNewShoe();
+  }
+
+  resetNewShoeForm(e: any) {
+    e.target.value = '';
   }
 
   addToRequest(): void {
@@ -39,5 +47,43 @@ export class RequestFormComponent {
     });
 
     console.log(this.shoes);
+
+    this.resetForm();
+  }
+
+  checkLength(e: any): boolean {
+    if (e.target.value.length >= 10) {
+      return true;
+    }
+    return false;
+  }
+
+  onPhoneNumberChange(event: any): void {
+    let isValid = this.checkLength(event);
+    if (isValid) {
+      this.setLengthValid();
+      return;
+    }
+    this.setLengthInvalid();
+  }
+
+  setLengthValid(): void {
+    this.phoneLengthValid = true;
+  }
+
+  setLengthInvalid(): void {
+    this.phoneLengthValid = false;
+  }
+
+  onNewShoe() {
+    this.setNewShoe();
+  }
+
+  setNewShoe() {
+    this.newShoe = true;
+  }
+
+  resetNewShoe() {
+    this.newShoe = false;
   }
 }

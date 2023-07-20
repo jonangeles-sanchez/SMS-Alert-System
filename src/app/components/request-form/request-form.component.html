@@ -3,9 +3,20 @@
   <form (ngSubmit)="submitForm()">
     <div class="form-group">
       <label for="phoneNumber">Phone Number</label>
-      <input type="string" id="phoneNumber" name="phoneNumber" required />
+      <input
+        type="string"
+        id="phoneNumber"
+        name="phoneNumber"
+        (input)="onPhoneNumberChange($event)"
+        placeholder="Enter your phone number to begin"
+        required
+      />
     </div>
-    <div class="shoeForm">
+    <button *ngIf="phoneLengthValid" (click)="onNewShoe()">
+      {{ shoes.length > 0 ? "Add another shoe" : "Add a shoe" }}
+    </button>
+    <!--- START: Seperate component -->
+    <div class="shoeForm" *ngIf="newShoe">
       <div class="form-group">
         <label for="manufacturer">Shoe Manufacturer Name</label>
         <input
@@ -54,6 +65,15 @@
         Add to request
       </button>
     </div>
-    <button>Submit Requested Shoes</button>
+    <!--- START: Seperate component -->
+    <div class="summary" *ngIf="shoes.length > 0">
+      <h3>Request summary:</h3>
+      <div *ngFor="let shoe of shoes">
+        <p>{{ shoe.manufacturer }} {{ shoe.shoeName }}</p>
+        <p>Shoe Size: {{ shoe.shoeSize }}</p>
+        <p>Shoe Quantity: {{ shoe.shoeQuantity }}</p>
+      </div>
+    </div>
+    <button *ngIf="shoes.length > 0">Submit Requested Shoes</button>
   </form>
 </div>
