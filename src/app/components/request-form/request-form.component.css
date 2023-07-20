@@ -1,0 +1,41 @@
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+}
+
+input {
+  width: 70%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  margin: auto;
+  display: block;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: auto;
+  display: block;
+  width: 75%;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.add-to-request {
+  margin-top: 20px;
+  background-color: green;
+  margin-bottom: 40px;
+}

@@ -1,0 +1,16 @@
+<div
+  class="sidebar-container"
+  [ngStyle]="{
+    transform: isCollapsed ? 'translateX(-250px)' : 'translateX(0)'
+  }"
+>
+  <div class="sidebar-header">Latino Shoes</div>
+  <ul class="sidebar-menu">
+    <li><a routerLink="/login">Login</a></li>
+    <li><a routerLink="/request-shoe">Request Shoe</a></li>
+    <li *ngIf="isLoggedIn">
+      <a routerLink="/all-requested-orders">See All Requested Orders</a>
+    </li>
+  </ul>
+</div>
+<button class="toggle-button" (click)="toggleSidebar()">&#9776;</button>

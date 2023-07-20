@@ -1,0 +1,62 @@
+/* Styles for the sidebar */
+.sidebar-container {
+  height: 100%;
+  width: 250px;
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.sidebar-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-menu li {
+  margin-bottom: 10px;
+}
+
+.sidebar-menu li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+.sidebar-menu li a:hover {
+  background-color: #555;
+}
+
+/* Highlight the active menu item */
+.sidebar-menu li.active a {
+  background-color: #444;
+}
+
+/* Styles for the toggle button */
+.toggle-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Hide the sidebar on screens larger than 768px */
+@media screen and (min-width: 768px) {
+  .sidebar-container {
+    transform: translateX(0);
+  }
+}
