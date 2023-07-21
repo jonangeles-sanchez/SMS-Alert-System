@@ -1,0 +1,15 @@
+<div class="summary" *ngIf="shoes.length > 0">
+  <h3>Request summary:</h3>
+  <div *ngFor="let shoe of shoes">
+    <p>{{ shoe.manufacturer }} {{ shoe.shoeName }}</p>
+    <p>Shoe Size: {{ shoe.shoeSize }}</p>
+    <p>Shoe Quantity: {{ shoe.shoeQuantity }}</p>
+  </div>
+</div>
+<button
+  class="submit-request-btn"
+  *ngIf="shoes.length > 0"
+  (click)="onSubmitRequest()"
+>
+  Submit Requested Shoes
+</button>

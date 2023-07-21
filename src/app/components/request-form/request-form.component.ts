@@ -8,36 +8,70 @@ import { ShoeRequest } from '../../ShoeRequest';
 })
 export class RequestFormComponent {
   phoneNumber!: string;
-  manufacturer!: string;
-  shoeName!: string;
-  shoeSize!: number;
-  quantity!: number;
-
+  newShoe: boolean = false;
+  phoneLengthValid: boolean = false;
   shoes: ShoeRequest[] = [];
+  submitted: boolean = false;
+
+  constructor() {}
 
   submitForm(): void {
-    console.log(this.phoneNumber);
-    console.log(this.shoes);
-
-    //this.resetForm();
+    this.setSubmitted();
+    console.log({ phoneNumber: this.phoneNumber, shoes: this.shoes });
+    console.log('Submitted!');
   }
 
-  resetForm(): void {
-    this.manufacturer = '';
-    this.shoeName = '';
-    this.shoeSize = 0;
-    this.phoneNumber = '';
-    this.quantity = 0;
-  }
+  addToRequest(data: ShoeRequest): void {
+    console.log(data);
 
-  addToRequest(): void {
-    this.shoes.push({
-      manufacturer: this.manufacturer,
-      shoeName: this.shoeName,
-      shoeSize: this.shoeSize,
-      shoeQuantity: this.quantity,
-    });
+    this.shoes.push(data);
 
     console.log(this.shoes);
+
+    this.resetNewShoe();
+  }
+
+  resetNewShoeForm(e: any) {
+    e.target.value = '';
+  }
+
+  checkLength(e: any): boolean {
+    if (e.target.value.length >= 10 && !isNaN(e.target.value)) {
+      return true;
+    }
+    return false;
+  }
+
+  onPhoneNumberChange(event: any): void {
+    let isValid = this.checkLength(event);
+    if (isValid) {
+      this.setLengthValid();
+      return;
+    }
+    this.setLengthInvalid();
+  }
+
+  setLengthValid(): void {
+    this.phoneLengthValid = true;
+  }
+
+  setLengthInvalid(): void {
+    this.phoneLengthValid = false;
+  }
+
+  onNewShoe() {
+    this.setNewShoe();
+  }
+
+  setNewShoe() {
+    this.newShoe = true;
+  }
+
+  resetNewShoe() {
+    this.newShoe = false;
+  }
+
+  setSubmitted() {
+    this.submitted = true;
   }
 }

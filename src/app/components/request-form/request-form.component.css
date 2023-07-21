@@ -1,41 +1,118 @@
-.form-group {
-  margin-bottom: 15px;
+/* Styles for the form container */
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
 }
 
-label {
-  display: block;
-  font-weight: bold;
+/* Styles for the heading */
+.form-container h2 {
   text-align: center;
+  color: #007bff;
 }
 
-input {
-  width: 70%;
+/* Styles for form groups */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input {
+  width: 90%;
   padding: 8px;
+  font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  text-align: center;
-  margin: auto;
-  display: block;
 }
 
+/* ... (Previous styles remain the same) ... */
+
+/* Styles for the "Add to request" button with gradient */
 button {
-  padding: 10px 15px;
+  background: linear-gradient(to right, #007bff, #0056b3);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Styles for the "Add to request" button when phone length is not valid */
+button[disabled] {
+  background: linear-gradient(to right, #ccc, #999);
+  cursor: not-allowed;
+}
+
+.submit-request-btn {
+  margin-top: 20px;
+}
+
+/* Styles for the shoeForm section */
+.shoeForm {
+  margin-top: 10%;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.shoeForm .form-group input {
+  border-color: #007bff;
+}
+
+.shoeForm .add-to-request {
+  margin-top: 15px;
   background-color: #007bff;
   color: #fff;
   border: none;
+  padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
-  margin: auto;
+  transition: background-color 0.3s ease;
+}
+
+/* Styles for the "Submit Requested Shoes" button */
+button[type="submit"] {
   display: block;
-  width: 75%;
+  margin: 20px auto 0;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #0056b3;
+/* Center the "Submit Requested Shoes" button within the form container */
+button[type="submit"] {
+  display: block;
+  margin: 20px auto 0;
 }
 
-.add-to-request {
-  margin-top: 20px;
-  background-color: green;
-  margin-bottom: 40px;
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767px) {
+  .form-group input {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .shoeForm,
+  .summary {
+    padding: 20px;
+  }
+
+  button {
+    padding: 12px 24px;
+  }
 }

@@ -1,59 +1,34 @@
-<div class="form-container">
+<div class="form-container" *ngIf="!submitted">
   <h2>Shoe Request Form</h2>
-  <form (ngSubmit)="submitForm()">
+  <form>
     <div class="form-group">
       <label for="phoneNumber">Phone Number</label>
-      <input type="string" id="phoneNumber" name="phoneNumber" required />
+      <input
+        type="string"
+        id="phoneNumber"
+        name="phoneNumber"
+        (input)="onPhoneNumberChange($event)"
+        placeholder="Enter your phone number to begin"
+        required
+      />
     </div>
-    <div class="shoeForm">
-      <div class="form-group">
-        <label for="manufacturer">Shoe Manufacturer Name</label>
-        <input
-          type="text"
-          id="manufacturer"
-          name="manufacturer"
-          placeholder="Nike, Adidas, Jordan, etc..."
-          [(ngModel)]="manufacturer"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label for="shoeName">Shoe Name</label>
-        <input
-          type="text"
-          id="shoeName"
-          name="shoeName"
-          placeholder="Jordan 1 Chicago, Dunk Panda, Yeezy 350's"
-          [(ngModel)]="shoeName"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label for="shoeSize">Shoe Size US</label>
-        <input
-          type="number"
-          step="any"
-          id="shoeSize"
-          name="shoeSize"
-          placeholder="8, 9, 10, 11.5"
-          [(ngModel)]="shoeSize"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label for="quantity">Quantity</label>
-        <input
-          type="number"
-          id="quantity"
-          name="quantity"
-          [(ngModel)]="quantity"
-          required
-        />
-      </div>
-      <button class="add-to-request" (click)="addToRequest()">
-        Add to request
-      </button>
+    <button *ngIf="phoneLengthValid" (click)="onNewShoe()">
+      {{ shoes.length > 0 ? "Add another shoe" : "Add a shoe" }}
+    </button>
+    <!--- START: Seperate component -->
+    <div class="shoeForm" *ngIf="newShoe && phoneLengthValid">
+      <app-shoe-form (addToRequest)="addToRequest($event)"></app-shoe-form>
     </div>
-    <button>Submit Requested Shoes</button>
+    <!--- START: Seperate component -->
+    <div class="summary-container">
+      <app-shoe-form-summary
+        *ngIf="shoes.length > 0 && phoneLengthValid"
+        [shoes]="shoes"
+        (submitForm)="submitForm()"
+      ></app-shoe-form-summary>
+    </div>
   </form>
+</div>
+<div class="form-container" *ngIf="submitted">
+  <app-shoe-form-submitted></app-shoe-form-submitted>
 </div>
