@@ -9,6 +9,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { BarComponent } from './components/bar/bar.component';
 import { RequestFormComponent } from './components/request-form/request-form.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ShoeFormComponent } from './components/shoe-form/shoe-form.component';
+import { ShoeFormSummaryComponent } from './components/shoe-form-summary/shoe-form-summary.component';
+import { ShoeFormSubmittedComponent } from './components/shoe-form-submitted/shoe-form-submitted.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     BarComponent,
     RequestFormComponent,
     SidebarComponent,
+    ShoeFormComponent,
+    ShoeFormSummaryComponent,
+    ShoeFormSubmittedComponent,
   ],
   imports: [
     BrowserModule,
