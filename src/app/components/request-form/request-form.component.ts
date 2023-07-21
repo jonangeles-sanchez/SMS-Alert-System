@@ -34,7 +34,7 @@ export class RequestFormComponent {
   }
 
   checkLength(e: any): boolean {
-    if (e.target.value.length >= 10) {
+    if (e.target.value.length >= 10 && !isNaN(e.target.value)) {
       return true;
     }
     return false;
