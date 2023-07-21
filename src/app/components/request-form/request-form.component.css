@@ -3,14 +3,15 @@
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
   font-family: Arial, sans-serif;
 }
 
 /* Styles for the heading */
 .form-container h2 {
   text-align: center;
+  color: #007bff;
 }
 
 /* Styles for form groups */
@@ -22,6 +23,7 @@
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  color: #555;
 }
 
 .form-group input {
@@ -40,6 +42,7 @@ button {
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 /* Styles for the "Add to request" button when phone length is not valid */
@@ -53,6 +56,7 @@ button[disabled] {
   border: 1px solid #ccc;
   padding: 15px;
   border-radius: 5px;
+  background-color: #fff;
 }
 
 .shoeForm .form-group input {
@@ -62,6 +66,12 @@ button[disabled] {
 .shoeForm .add-to-request {
   margin-top: 15px;
   background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 /* Styles for the summary section */
@@ -70,11 +80,13 @@ button[disabled] {
   border: 1px solid #ccc;
   padding: 15px;
   border-radius: 5px;
+  background-color: #fff;
 }
 
 .summary h3 {
   margin-top: 0;
   text-align: center;
+  color: #007bff;
 }
 
 .summary p {
@@ -91,10 +103,28 @@ button[type="submit"] {
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 /* Center the "Submit Requested Shoes" button within the form container */
 button[type="submit"] {
   display: block;
   margin: 20px auto 0;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767px) {
+  .form-group input {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .shoeForm,
+  .summary {
+    padding: 20px;
+  }
+
+  button {
+    padding: 12px 24px;
+  }
 }
