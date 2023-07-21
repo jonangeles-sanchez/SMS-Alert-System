@@ -1,1 +1,48 @@
-<p>view-requests works!</p>
+<div class="request-list">
+  <div class="buttons">
+    <button class="action-button remind-all" (click)="remindAll()">
+      Remind All
+    </button>
+    <button class="action-button delete-all" (click)="deleteAll()">
+      Delete All
+    </button>
+  </div>
+
+  <div class="request" *ngFor="let request of requests">
+    <div class="request-header">
+      <h2>Client Phone Number: {{ request.phoneNumber }}</h2>
+      <div class="request-actions">
+        <button
+          [ngClass]="{
+            'action-button': true,
+            remind: !request.reminded,
+            reminded: request.reminded
+          }"
+          (click)="remind(request)"
+        >
+          {{ request.reminded ? "Reminded" : "Remind" }}
+        </button>
+        <button class="action-button delete" (click)="delete(request)">
+          Delete
+        </button>
+      </div>
+    </div>
+    <h3>Shoes Requested:</h3>
+    <ul class="shoe-list">
+      <li *ngFor="let shoe of request.shoes">
+        <div class="shoe">
+          <p class="shoe-info">
+            <strong>Manufacturer:</strong> {{ shoe.manufacturer }}
+          </p>
+          <p class="shoe-info">
+            <strong>Shoe Name:</strong> {{ shoe.shoeName }}
+          </p>
+          <p class="shoe-info"><strong>Size:</strong> {{ shoe.shoeSize }}</p>
+          <p class="shoe-info">
+            <strong>Quantity:</strong> {{ shoe.shoeQuantity }}
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
