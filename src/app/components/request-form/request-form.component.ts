@@ -16,7 +16,9 @@ export class RequestFormComponent {
   constructor() {}
 
   submitForm(): void {
-    //this.resetForm();
+    //this.setSubmitted();
+    console.log({ phoneNumber: this.phoneNumber, shoes: this.shoes });
+    console.log('Submitted!');
   }
 
   addToRequest(data: ShoeRequest): void {
@@ -67,5 +69,9 @@ export class RequestFormComponent {
 
   resetNewShoe() {
     this.newShoe = false;
+  }
+
+  setSubmitted() {
+    this.submitted = true;
   }
 }

@@ -6,6 +6,10 @@
     <p>Shoe Quantity: {{ shoe.shoeQuantity }}</p>
   </div>
 </div>
-<button class="submit-request-btn" *ngIf="shoes.length > 0">
+<button
+  class="submit-request-btn"
+  *ngIf="shoes.length > 0"
+  (click)="onSubmitRequest()"
+>
   Submit Requested Shoes
 </button>
