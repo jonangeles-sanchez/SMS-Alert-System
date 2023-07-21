@@ -8,13 +8,9 @@ import { ShoeRequest } from '../../ShoeRequest';
 })
 export class RequestFormComponent {
   phoneNumber!: string;
-
   newShoe: boolean = false;
-
   phoneLengthValid: boolean = false;
-
   shoes: ShoeRequest[] = [];
-
   submitted: boolean = false;
 
   constructor() {}
