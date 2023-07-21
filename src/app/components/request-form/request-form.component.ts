@@ -16,7 +16,7 @@ export class RequestFormComponent {
   constructor() {}
 
   submitForm(): void {
-    //this.setSubmitted();
+    this.setSubmitted();
     console.log({ phoneNumber: this.phoneNumber, shoes: this.shoes });
     console.log('Submitted!');
   }
