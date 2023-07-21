@@ -81,25 +81,6 @@ button[disabled] {
   transition: background-color 0.3s ease;
 }
 
-/* Styles for the summary section */
-.summary {
-  margin-top: 20px;
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 5px;
-  background-color: #fff;
-}
-
-.summary h3 {
-  margin-top: 0;
-  text-align: center;
-  color: #007bff;
-}
-
-.summary p {
-  margin-bottom: 10px;
-}
-
 /* Styles for the "Submit Requested Shoes" button */
 button[type="submit"] {
   display: block;

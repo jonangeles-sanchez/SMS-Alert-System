@@ -20,16 +20,11 @@
       <app-shoe-form (addToRequest)="addToRequest($event)"></app-shoe-form>
     </div>
     <!--- START: Seperate component -->
-    <div class="summary" *ngIf="shoes.length > 0">
-      <h3>Request summary:</h3>
-      <div *ngFor="let shoe of shoes">
-        <p>{{ shoe.manufacturer }} {{ shoe.shoeName }}</p>
-        <p>Shoe Size: {{ shoe.shoeSize }}</p>
-        <p>Shoe Quantity: {{ shoe.shoeQuantity }}</p>
-      </div>
+    <div class="summary-container">
+      <app-shoe-form-summary
+        *ngIf="shoes.length > 0"
+        [shoes]="shoes"
+      ></app-shoe-form-summary>
     </div>
-    <button class="submit-request-btn" *ngIf="shoes.length > 0">
-      Submit Requested Shoes
-    </button>
   </form>
 </div>

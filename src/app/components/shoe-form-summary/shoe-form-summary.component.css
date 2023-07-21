@@ -1,0 +1,62 @@
+/* Styles for the summary section */
+.summary {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.summary h3 {
+  margin-top: 0;
+  text-align: center;
+  color: #007bff;
+}
+
+.summary p {
+  margin-bottom: 10px;
+}
+
+/* Center the "Submit Requested Shoes" button within the form container */
+button[type="submit"] {
+  display: block;
+  margin: 20px auto 0;
+}
+
+.submit-request-btn {
+  margin-top: 20px;
+}
+
+button[type="submit"] {
+  display: block;
+  margin: 20px auto 0;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button {
+  background: linear-gradient(to right, #007bff, #0056b3);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"] {
+  display: block;
+  margin: 20px auto 0;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}

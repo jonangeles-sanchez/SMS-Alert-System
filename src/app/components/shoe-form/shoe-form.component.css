@@ -46,3 +46,19 @@ button[disabled] {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
+@media (max-width: 767px) {
+  .form-group input {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .shoeForm,
+  .summary {
+    padding: 20px;
+  }
+
+  button {
+    padding: 12px 24px;
+  }
+}
