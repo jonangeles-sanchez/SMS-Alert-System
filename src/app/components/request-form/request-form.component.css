@@ -27,16 +27,18 @@
 }
 
 .form-group input {
-  width: 100%;
+  width: 90%;
   padding: 8px;
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-/* Styles for the "Add to request" button */
+/* ... (Previous styles remain the same) ... */
+
+/* Styles for the "Add to request" button with gradient */
 button {
-  background-color: #007bff;
+  background: linear-gradient(to right, #007bff, #0056b3);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -47,12 +49,17 @@ button {
 
 /* Styles for the "Add to request" button when phone length is not valid */
 button[disabled] {
-  background-color: #ccc;
+  background: linear-gradient(to right, #ccc, #999);
   cursor: not-allowed;
+}
+
+.submit-request-btn {
+  margin-top: 20px;
 }
 
 /* Styles for the shoeForm section */
 .shoeForm {
+  margin-top: 10%;
   border: 1px solid #ccc;
   padding: 15px;
   border-radius: 5px;

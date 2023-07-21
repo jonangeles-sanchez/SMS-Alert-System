@@ -8,10 +8,6 @@ import { ShoeRequest } from '../../ShoeRequest';
 })
 export class RequestFormComponent {
   phoneNumber!: string;
-  manufacturer!: string;
-  shoeName!: string;
-  shoeSize!: number;
-  quantity!: number;
 
   newShoe: boolean = false;
 
@@ -19,36 +15,24 @@ export class RequestFormComponent {
 
   shoes: ShoeRequest[] = [];
 
+  submitted: boolean = false;
+
   constructor() {}
 
   submitForm(): void {
     //this.resetForm();
   }
 
-  resetForm(): void {
-    this.manufacturer = '';
-    this.shoeName = '';
-    this.shoeSize = 0;
-    this.phoneNumber = '';
-    this.quantity = 0;
-    this.resetNewShoe();
+  addToRequest(data: ShoeRequest): void {
+    console.log(data);
+
+    this.shoes.push(data);
+
+    console.log(this.shoes);
   }
 
   resetNewShoeForm(e: any) {
     e.target.value = '';
-  }
-
-  addToRequest(): void {
-    this.shoes.push({
-      manufacturer: this.manufacturer,
-      shoeName: this.shoeName,
-      shoeSize: this.shoeSize,
-      shoeQuantity: this.quantity,
-    });
-
-    console.log(this.shoes);
-
-    this.resetForm();
   }
 
   checkLength(e: any): boolean {
