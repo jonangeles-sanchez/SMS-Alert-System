@@ -29,6 +29,8 @@ export class RequestFormComponent {
     this.shoes.push(data);
 
     console.log(this.shoes);
+
+    this.resetNewShoe();
   }
 
   resetNewShoeForm(e: any) {
