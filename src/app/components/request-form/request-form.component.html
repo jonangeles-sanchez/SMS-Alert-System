@@ -16,13 +16,13 @@
       {{ shoes.length > 0 ? "Add another shoe" : "Add a shoe" }}
     </button>
     <!--- START: Seperate component -->
-    <div class="shoeForm" *ngIf="newShoe">
+    <div class="shoeForm" *ngIf="newShoe && phoneLengthValid">
       <app-shoe-form (addToRequest)="addToRequest($event)"></app-shoe-form>
     </div>
     <!--- START: Seperate component -->
     <div class="summary-container">
       <app-shoe-form-summary
-        *ngIf="shoes.length > 0"
+        *ngIf="shoes.length > 0 && phoneLengthValid"
         [shoes]="shoes"
       ></app-shoe-form-summary>
     </div>
