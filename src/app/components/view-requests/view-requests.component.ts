@@ -20,15 +20,15 @@ export class ViewRequestsComponent {
       shoes: [
         {
           manufacturer: 'Nike',
-          shoeName: 'Air Max 90',
-          shoeSize: 10,
-          shoeQuantity: 1,
+          name: 'Air Max 90',
+          size: 10,
+          quantity: 1,
         },
         {
           manufacturer: 'Nike',
-          shoeName: 'Dunk Panda',
-          shoeSize: 10,
-          shoeQuantity: 1,
+          name: 'Dunk Panda',
+          size: 10,
+          quantity: 1,
         },
       ],
       reminded: false,
@@ -38,15 +38,15 @@ export class ViewRequestsComponent {
       shoes: [
         {
           manufacturer: 'Jordan',
-          shoeName: 'Jordan 1 Travis Scott',
-          shoeSize: 10,
-          shoeQuantity: 1,
+          name: 'Jordan 1 Travis Scott',
+          size: 10,
+          quantity: 1,
         },
         {
           manufacturer: 'Jordan',
-          shoeName: 'Jordan 1 Bred',
-          shoeSize: 10,
-          shoeQuantity: 1,
+          name: 'Jordan 1 Bred',
+          size: 10,
+          quantity: 1,
         },
       ],
       reminded: false,
@@ -56,15 +56,15 @@ export class ViewRequestsComponent {
       shoes: [
         {
           manufacturer: 'Adidas',
-          shoeName: 'Yeezy 350 V2',
-          shoeSize: 10,
-          shoeQuantity: 1,
+          name: 'Yeezy 350 V2',
+          size: 10,
+          quantity: 1,
         },
         {
           manufacturer: 'Adidas',
-          shoeName: 'Yeezy Slides Black',
-          shoeSize: 10,
-          shoeQuantity: 1,
+          name: 'Yeezy Slides Black',
+          size: 10,
+          quantity: 1,
         },
       ],
       reminded: false,
@@ -74,9 +74,9 @@ export class ViewRequestsComponent {
       shoes: [
         {
           manufacturer: 'Nike',
-          shoeName: 'Dunk Pandas',
-          shoeSize: 10,
-          shoeQuantity: 1,
+          name: 'Dunk Pandas',
+          size: 10,
+          quantity: 1,
         },
       ],
       reminded: false,
@@ -86,9 +86,9 @@ export class ViewRequestsComponent {
       shoes: [
         {
           manufacturer: 'Nike',
-          shoeName: 'Dunk SB Jarritos',
-          shoeSize: 10,
-          shoeQuantity: 1,
+          name: 'Dunk SB Jarritos',
+          size: 10,
+          quantity: 1,
         },
       ],
       reminded: false,
