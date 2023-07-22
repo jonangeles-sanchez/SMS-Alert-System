@@ -137,6 +137,7 @@ export class ViewRequestsComponent {
   }
 
   deleteAll(): void {
+    this.shoeRequestService.deleteAllRequests().subscribe();
     this.requests = [];
   }
 }
