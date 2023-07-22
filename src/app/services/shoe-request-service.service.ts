@@ -23,8 +23,8 @@ export class ShoeRequestServiceService {
     );
   }
 
-  public getAllRequests(): Observable<ShoeRequest[]> {
-    return this.http.get<ShoeRequest[]>(`${this.baseUrl}`);
+  public getAllRequests(): Observable<ShoeRequestEntry[]> {
+    return this.http.get<ShoeRequestEntry[]>(`${this.baseUrl}`);
   }
 
   public deleteAllRequests(): Observable<ShoeRequest[]> {
