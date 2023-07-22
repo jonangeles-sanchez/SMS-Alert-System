@@ -14,6 +14,7 @@ import { ShoeFormComponent } from './components/shoe-form/shoe-form.component';
 import { ShoeFormSummaryComponent } from './components/shoe-form-summary/shoe-form-summary.component';
 import { ShoeFormSubmittedComponent } from './components/shoe-form-submitted/shoe-form-submitted.component';
 import { ViewRequestsComponent } from './components/view-requests/view-requests.component';
+import { LoginViewComponent } from './components/login-view/login-view.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ViewRequestsComponent } from './components/view-requests/view-requests.
     ShoeFormSummaryComponent,
     ShoeFormSubmittedComponent,
     ViewRequestsComponent,
+    LoginViewComponent,
   ],
   imports: [
     BrowserModule,
