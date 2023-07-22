@@ -1,9 +1,9 @@
 <div class="summary" *ngIf="shoes.length > 0">
   <h3>Request summary:</h3>
   <div *ngFor="let shoe of shoes">
-    <p>{{ shoe.manufacturer }} {{ shoe.shoeName }}</p>
-    <p>Shoe Size: {{ shoe.shoeSize }}</p>
-    <p>Shoe Quantity: {{ shoe.shoeQuantity }}</p>
+    <p>{{ shoe.manufacturer }} {{ shoe.name }}</p>
+    <p>Shoe Size: {{ shoe.size }}</p>
+    <p>Shoe Quantity: {{ shoe.quantity }}</p>
   </div>
 </div>
 <button
