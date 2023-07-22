@@ -32,7 +32,7 @@ export class ShoeRequestServiceService {
   }
 
   public deleteRequestByPhoneNumber(phoneNumber: string): Observable<any> {
-    return this.http.delete<any>(`${this.baseUrl}/delete/${phoneNumber}`);
+    return this.http.delete<any>(`${this.baseUrl}/${phoneNumber}`);
   }
 
   // post /api/v1/notify/{ToPhoneNumber}/{MessageType}
