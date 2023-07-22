@@ -28,7 +28,7 @@ export class ShoeRequestServiceService {
   }
 
   public deleteAllRequests(): Observable<ShoeRequest[]> {
-    return this.http.delete<ShoeRequest[]>(`${this.baseUrl}/delete`);
+    return this.http.delete<ShoeRequest[]>(`${this.baseUrl}`);
   }
 
   public deleteRequestByPhoneNumber(phoneNumber: string): Observable<any> {
