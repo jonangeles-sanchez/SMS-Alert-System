@@ -125,7 +125,15 @@ export class ViewRequestsComponent {
   }
 
   remindAll(): void {
-    this.requests.forEach((request) => (request.reminded = true));
+    this.requests.forEach((request) => {
+      if (!request.reminded) {
+        this.shoeRequestService
+          .sendNotification(request.phoneNumber, 'in_stock')
+          .subscribe();
+        this.shoeRequestService.setReminded(request.phoneNumber).subscribe();
+        request.reminded = true;
+      }
+    });
   }
 
   deleteAll(): void {
