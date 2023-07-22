@@ -29,17 +29,15 @@
     </div>
     <h3>Shoes Requested:</h3>
     <ul class="shoe-list">
-      <li *ngFor="let shoe of request.shoes">
+      <li *ngFor="let shoe of request.requestedShoes">
         <div class="shoe">
           <p class="shoe-info">
             <strong>Manufacturer:</strong> {{ shoe.manufacturer }}
           </p>
+          <p class="shoe-info"><strong>Shoe Name:</strong> {{ shoe.name }}</p>
+          <p class="shoe-info"><strong>Size:</strong> {{ shoe.size }}</p>
           <p class="shoe-info">
-            <strong>Shoe Name:</strong> {{ shoe.shoeName }}
-          </p>
-          <p class="shoe-info"><strong>Size:</strong> {{ shoe.shoeSize }}</p>
-          <p class="shoe-info">
-            <strong>Quantity:</strong> {{ shoe.shoeQuantity }}
+            <strong>Quantity:</strong> {{ shoe.quantity }}
           </p>
         </div>
       </li>

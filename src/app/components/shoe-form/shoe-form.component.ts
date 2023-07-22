@@ -24,9 +24,9 @@ export class ShoeFormComponent {
   createShoeRequest(): ShoeRequest {
     return {
       manufacturer: this.manufacturer,
-      shoeName: this.shoeName,
-      shoeSize: this.shoeSize,
-      shoeQuantity: this.quantity,
+      name: this.shoeName,
+      size: this.shoeSize,
+      quantity: this.quantity,
     };
   }
 

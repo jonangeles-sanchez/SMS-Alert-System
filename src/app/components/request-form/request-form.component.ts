@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ShoeRequest } from '../../ShoeRequest';
+import { ShoeRequestServiceService } from 'src/app/services/shoe-request-service.service';
+import { ShoeRequestEntry } from 'src/app/ShoeRequestEntry';
 
 @Component({
   selector: 'app-request-form',
@@ -13,12 +15,23 @@ export class RequestFormComponent {
   shoes: ShoeRequest[] = [];
   submitted: boolean = false;
 
-  constructor() {}
+  constructor(private shoeRequestService: ShoeRequestServiceService) {}
 
   submitForm(): void {
-    this.setSubmitted();
-    console.log({ phoneNumber: this.phoneNumber, shoes: this.shoes });
-    console.log('Submitted!');
+    let request: ShoeRequestEntry = {
+      phoneNumber: this.phoneNumber,
+      requestedShoes: this.shoes,
+      reminded: false,
+    };
+
+    try {
+      this.shoeRequestService.addNewRequest(request).subscribe((data) => {
+        console.log('Successfully sent data: ' + data);
+      });
+      this.setSubmitted();
+    } catch (e) {
+      console.log('Error sending data: ' + e);
+    }
   }
 
   addToRequest(data: ShoeRequest): void {
@@ -45,18 +58,20 @@ export class RequestFormComponent {
   onPhoneNumberChange(event: any): void {
     let isValid = this.checkLength(event);
     if (isValid) {
-      this.setLengthValid();
+      this.setLengthValid(event);
       return;
     }
     this.setLengthInvalid();
   }
 
-  setLengthValid(): void {
+  setLengthValid(e: any): void {
     this.phoneLengthValid = true;
+    this.phoneNumber = e.target.value;
   }
 
   setLengthInvalid(): void {
     this.phoneLengthValid = false;
+    this.phoneNumber = '';
   }
 
   onNewShoe() {
