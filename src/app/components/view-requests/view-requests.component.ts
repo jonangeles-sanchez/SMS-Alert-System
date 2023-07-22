@@ -112,6 +112,7 @@ export class ViewRequestsComponent {
     this.shoeRequestService
       .sendNotification(request.phoneNumber, 'in_stock')
       .subscribe();
+    this.shoeRequestService.setReminded(request.phoneNumber).subscribe();
     request.reminded = true;
   }
 

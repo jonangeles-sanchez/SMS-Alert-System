@@ -52,4 +52,8 @@ export class ShoeRequestServiceService {
       options
     );
   }
+
+  public setReminded(phoneNumber: string): Observable<any> {
+    return this.http.put<any>(`${this.baseUrl}/${phoneNumber}`, {});
+  }
 }
