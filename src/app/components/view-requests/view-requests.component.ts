@@ -118,6 +118,7 @@ export class ViewRequestsComponent {
 
   delete(request: ShoeRequestEntry): void {
     const index = this.requests.indexOf(request);
+    this.shoeRequestService.deleteRequestByPhoneNumber(request.phoneNumber);
     if (index !== -1) {
       this.requests.splice(index, 1);
     }
